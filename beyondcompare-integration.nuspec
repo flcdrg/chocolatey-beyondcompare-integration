@@ -5,8 +5,7 @@
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>beyondcompare-integration</id>
     <version>0.0.1-pre</version>
-    <!-- <packageSourceUrl>Where is this Chocolatey package located (think GitHub)? packageSourceUrl is highly recommended for the community feed</packageSourceUrl>-->
-    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <packageSourceUrl>https://github.com/flcdrg/chocolatey-beyondcompare-integration</packageSourceUrl>
     <owners>flcdrg</owners>
     <!-- ============================== -->
 
@@ -15,12 +14,12 @@
     <title>BeyondCompare Integration</title>
     <authors>David Gardiner</authors>
     <!-- projectUrl is required for the community feed -->
-    <projectUrl>https://_Software_Location_REMOVE_OR_FILL_OUT_</projectUrl>
+    <projectUrl>https://github.com/flcdrg/chocolatey-beyondcompare-integration</projectUrl>
     <iconUrl>https://cdn.rawgit.com/dtgm/chocolatey-packages/df0375a1fab41e47eaef69f758e59591091f6cba/icons/beyondcompare.png</iconUrl>
-    <!-- <copyright>Year Software Vendor</copyright> -->
+    <copyright>2016 David Gardiner</copyright>
     <!-- If there is a license Url available, it is is required for the community feed -->
-    <!-- <licenseUrl>Software License Location __REMOVE_OR_FILL_OUT__</licenseUrl>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>-->
+    <licenseUrl>https://raw.githubusercontent.com/flcdrg/chocolatey-beyondcompare-integration/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <!--<projectSourceUrl>Software Source Location - is the software FOSS somewhere? Link to it with this</projectSourceUrl>-->
     <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
     <!--<mailingListUrl></mailingListUrl>-->
