@@ -11,7 +11,7 @@
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
-    <title>BeyondCompare Integration</title>
+    <title>Beyond Compare Integration</title>
     <authors>David Gardiner</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://github.com/flcdrg/chocolatey-beyondcompare-integration</projectUrl>
@@ -25,11 +25,11 @@
     <!--<mailingListUrl></mailingListUrl>-->
     <!--<bugTrackerUrl></bugTrackerUrl>-->
     <tags>beyondcompare admin</tags>
-    <summary>Integration BeyondCompare as the default file comparison tool</summary>
+    <summary>Integrate Beyond Compare as the default file comparison tool</summary>
     <description>
-	Automatically configures various tools to use BeyondCompare for file comparisons.
+	Automatically configures various tools to use Beyond Compare for file comparisons.
 	
-	The script detects which tools you have installed and then configures them appropriately so that they will use BeyondCompare for diffing and merging files.
+	The script detects which tools you have installed and then configures them appropriately so that they will use Beyond Compare for diffing and merging files.
 	</description>
     <releaseNotes>
 	Initial release, support for Git for Windows and TortoiseGit
