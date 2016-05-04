@@ -26,8 +26,14 @@
     <!--<bugTrackerUrl></bugTrackerUrl>-->
     <tags>beyondcompare admin</tags>
     <summary>Integration BeyondCompare as the default file comparison tool</summary>
-    <description>Configured various tools to use BeyondCompare for file comparisons.</description>
-    <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
+    <description>
+	Automatically configures various tools to use BeyondCompare for file comparisons.
+	
+	The script detects which tools you have installed and then configures them appropriately so that they will use BeyondCompare for diffing and merging files.
+	</description>
+    <releaseNotes>
+	Initial release, support for Git for Windows and TortoiseGit
+	</releaseNotes>
     <!-- =============================== -->      
 
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->

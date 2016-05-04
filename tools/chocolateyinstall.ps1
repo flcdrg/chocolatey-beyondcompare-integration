@@ -7,6 +7,8 @@ where.exe git /q
 
 if ($LASTEXITCODE -eq 0)
 {
+    Write-Verbose "Configuring git.exe"
+
     git config --global diff.tool bc3
     git config --global difftool.bc3.path "c:/Program Files (x86)/Beyond Compare 4/bcomp.exe"
 
@@ -17,6 +19,8 @@ if ($LASTEXITCODE -eq 0)
 # TortoiseGit
 if (Test-Path HKCU:\SOFTWARE\TortoiseGit)
 {
+    Write-Verbose "Configuring TortoiseGit"
+
     $keySoftware = get-item HKCU:\SOFTWARE
 
     $r = $keySoftware.OpenSubKey("TortoiseGit", $true)
