@@ -20,19 +20,21 @@
     <!-- If there is a license Url available, it is is required for the community feed -->
     <licenseUrl>https://raw.githubusercontent.com/flcdrg/chocolatey-beyondcompare-integration/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <!--<projectSourceUrl>Software Source Location - is the software FOSS somewhere? Link to it with this</projectSourceUrl>-->
+    <projectSourceUrl>https://github.com/flcdrg/chocolatey-beyondcompare-integration</projectSourceUrl>
     <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
     <!--<mailingListUrl></mailingListUrl>-->
-    <!--<bugTrackerUrl></bugTrackerUrl>-->
-    <tags>beyondcompare admin</tags>
+    <bugTrackerUrl>https://github.com/flcdrg/chocolatey-beyondcompare-integration/issues</bugTrackerUrl>
+    <tags>beyondcompare beyond compare admin</tags>
     <summary>Integrate Beyond Compare as the default file comparison tool</summary>
     <description>
 	Automatically configures various tools to use Beyond Compare for file comparisons.
 	
 	The script detects which tools you have installed and then configures them appropriately so that they will use Beyond Compare for diffing and merging files.
+	
+	Any old values are logged as warnings to the console, or if possible a backup copy of any modified files is made.
 	</description>
     <releaseNotes>
-	Initial release, support for Git for Windows and TortoiseGit
+	Initial release: Includes support for Git for Windows, TortoiseGit, TortoiseSVN
 	</releaseNotes>
     <!-- =============================== -->      
 
