@@ -39,8 +39,13 @@ if ($LASTEXITCODE -eq 0)
 
     $backupPath = Join-Path -Path $backupFolder (".gitconfig." + [DateTime]::UtcNow.ToString("yyyyMMddHHmm"))
 
-    Copy-Item -Path $gitconfig -Destination $backupPath
-    Write-Warning "Created backup of .gitconfig at $backupPath"
+    if (Test-Path $gitconfig)
+    {
+        Copy-Item -Path $gitconfig -Destination $backupPath
+        Write-Warning "Created backup of .gitconfig at $backupPath"
+    } else {
+        Write-Warning "Could not find existing file $gitconfig so no backup was taken"
+    }
 
 
     git config --global diff.tool bc
