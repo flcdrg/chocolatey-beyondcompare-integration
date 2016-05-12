@@ -10,6 +10,24 @@ if ($backupFolder -eq $null)
     $backupFolder = $env:TEMP
 }
 
+# Find Beyond Compare
+if (Test-Path "${env:ProgramFiles(x86)}\Beyond Compare 4\bcomp.exe")
+{
+    $bcompPath = "${env:ProgramFiles(x86)}\Beyond Compare 4\bcomp.exe"
+}
+elseif (Test-Path "$env:ProgramFiles\Beyond Compare 4\bcomp.exe") 
+{
+    $bcompPath = "$env:ProgramFiles\Beyond Compare 4\bcomp.exe"
+} 
+else 
+{
+    Write-Error "Beyond Compare 4 was not found"
+}
+
+Write-Verbose "Using $bcompPath"
+
+$bcompPathPosix = $bcompPath.Replace("\", "/")
+
 # Git for Windows
 where.exe git /q
 
@@ -24,11 +42,12 @@ if ($LASTEXITCODE -eq 0)
     Copy-Item -Path $gitconfig -Destination $backupPath
     Write-Warning "Created backup of .gitconfig at $backupPath"
 
+
     git config --global diff.tool bc
-    git config --global difftool.bc.path "c:/Program Files (x86)/Beyond Compare 4/bcomp.exe"
+    git config --global difftool.bc.path "$bcompPathPosix"
 
     git config --global merge.tool bc
-    git config --global mergetool.bc.path "c:/Program Files (x86)/Beyond Compare 4/bcomp.exe"
+    git config --global mergetool.bc.path "$bcompPathPosix"
 }
 
 # TortoiseGit
@@ -44,14 +63,14 @@ if (Test-Path HKCU:\SOFTWARE\TortoiseGit)
     {
         Write-Warning ("Old Registry value (HKCU\SOFTWARE\TortoiseGit\Diff): " + $old)
     }
-    $r.SetValue("Diff", '"C:\Program Files (x86)\Beyond Compare 4\BComp.exe" %base %mine /title1=%bname /title2=%yname /leftreadonly', [Microsoft.Win32.RegistryValueKind]::String)
+    $r.SetValue("Diff", "`"$($bcompPath)`" %base %mine /title1=%bname /title2=%yname /leftreadonly", [Microsoft.Win32.RegistryValueKind]::String)
 
     $old = $r.GetValue("Merge")
     if ($old)
     {
         Write-Warning ("Old Registry value (HKCU\SOFTWARE\TortoiseGit\Merge): " + $old)
     }
-    $r.SetValue("Merge", '"C:\Program Files (x86)\Beyond Compare 4\BComp.exe" %mine %theirs %base %merged /title1=%yname /title2=%tname /title3=%bname /title4=%mname', [Microsoft.Win32.RegistryValueKind]::String)
+    $r.SetValue("Merge", "`"$bcompPath`" %mine %theirs %base %merged /title1=%yname /title2=%tname /title3=%bname /title4=%mname", [Microsoft.Win32.RegistryValueKind]::String)
     $r.Close()
     $keySoftware.Close()
 }
@@ -70,14 +89,14 @@ if (Test-Path HKCU:\SOFTWARE\TortoiseSVN)
     {
         Write-Warning ("Old Registry value (HKCU\SOFTWARE\TortoiseSVN\Diff): " + $old)
     }
-    $r.SetValue("Diff", '"C:\Program Files (x86)\Beyond Compare 4\BComp.exe" %base %mine /title1=%bname /title2=%yname /leftreadonly', [Microsoft.Win32.RegistryValueKind]::String)
+    $r.SetValue("Diff", "`"$bcompPath`" %base %mine /title1=%bname /title2=%yname /leftreadonly", [Microsoft.Win32.RegistryValueKind]::String)
 
     $old = $r.GetValue("Merge")
     if ($old)
     {
         Write-Warning ("Old Registry value (HKCU\SOFTWARE\TortoiseSVN\Merge): " + $old)
     }
-    $r.SetValue("Merge", '"C:\Program Files (x86)\Beyond Compare 4\BComp.exe" %mine %theirs %base %merged /title1=%yname /title2=%tname /title3=%bname /title4=%mname', [Microsoft.Win32.RegistryValueKind]::String)
+    $r.SetValue("Merge", "`"$bcompPath`" %mine %theirs %base %merged /title1=%yname /title2=%tname /title3=%bname /title4=%mname", [Microsoft.Win32.RegistryValueKind]::String)
     $r.Close()
     $keySoftware.Close()
 }
