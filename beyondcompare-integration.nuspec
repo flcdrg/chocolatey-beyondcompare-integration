@@ -4,7 +4,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>beyondcompare-integration</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packageSourceUrl>https://github.com/flcdrg/chocolatey-beyondcompare-integration</packageSourceUrl>
     <owners>flcdrg</owners>
     <!-- ============================== -->
@@ -34,7 +34,7 @@
 	Any old values are logged as warnings to the console, or if possible a backup copy of any modified files is made.
 	</description>
     <releaseNotes>
-	Initial release: Includes support for Git for Windows, TortoiseGit, TortoiseSVN
+	Check location of bcomp.exe
 	</releaseNotes>
     <!-- =============================== -->      
 
