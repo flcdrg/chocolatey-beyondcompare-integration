@@ -1,6 +1,8 @@
 # beyondcompare-integration
 Chocolatey package for configuring Beyond Compare with version control and other tools
 
+[![Chocolatey](https://img.shields.io/chocolatey/v/beyondcompare-integration.svg?maxAge=2592000)](https://chocolatey.org/packages/beyondcompare-integration)
+
 This package uses the chocolateyinstall.ps1 script to configure all matching applications to use Beyond Compare as the default file comparison tool.
 
 ## Applications supported
